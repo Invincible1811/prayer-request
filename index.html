@@ -208,7 +208,6 @@
     var n = 0;
     requestsByMonth().forEach(function (m) {
       message += "\n*" + m.month.toUpperCase() + "*\n";
-      if (!m.lines.length) message += "-\n";
       m.lines.forEach(function (line) { n += 1; message += n + ". " + line + "\n"; });
     });
     message += "\n--------------------\nTotal requests: " + n;
