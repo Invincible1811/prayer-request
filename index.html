@@ -197,14 +197,19 @@
   }
 
   function buildLink(name, phone) {
-    let message = "Next Year Must Favour Me\nPrayer Requests\n\nName: " + name + "\n";
-    if (phone) message += "Phone: " + phone + "\n";
+    let message = "*NEXT YEAR MUST FAVOUR ME*\n"
+      + "Divine Peniel Chapel Worldwide\n"
+      + "Prayer Requests: Nov 2026 to Nov 2027\n"
+      + "--------------------\n\n"
+      + "*Name:* " + name + "\n"
+      + "*Phone:* " + (phone || "Not given") + "\n";
     let n = 0;
     requestsByMonth().forEach(function (m) {
-      if (!m.lines.length) return;
-      message += "\n" + m.month + "\n";
+      message += "\n*" + m.month.toUpperCase() + "*\n";
+      if (!m.lines.length) message += "-\n";
       m.lines.forEach(function (line) { n += 1; message += n + ". " + line + "\n"; });
     });
+    message += "\n--------------------\nTotal requests: " + n;
     return "https://wa.me/" + PAPA_NUMBER + "?text=" + encodeURIComponent(message.trim());
   }
 
