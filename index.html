@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Next Year Must Favour Me: Prayer Request</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; padding: 24px 16px;
+    font-family: Arial, Helvetica, sans-serif; color: #1c2430;
+    background: #eaf0f8; display: flex; justify-content: center; align-items: flex-start;
+  }
+  main {
+    width: 100%; max-width: 480px; background: #fff; border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(31, 56, 100, .12);
+  }
+  header { background: #1f3864; color: #fff; padding: 24px 20px; text-align: center; border-radius: 12px 12px 0 0; }
+  h1 { margin: 0 0 6px; font-size: 24px; line-height: 1.2; }
+  header p { margin: 0; font-size: 16px; font-weight: bold; }
+  form { padding: 20px; }
+  label { display: block; font-weight: bold; margin-bottom: 6px; }
+  .optional { font-weight: normal; color: #4a5568; }
+  input, textarea {
+    width: 100%; padding: 12px; margin-bottom: 18px; font: inherit; font-size: 16px;
+    border: 1px solid #bfc8d6; border-radius: 8px;
+  }
+  textarea { min-height: 66px; resize: vertical; margin-bottom: 14px; }
+  input:focus, textarea:focus { outline: 2px solid #1f3864; border-color: #1f3864; }
+  .instructions {
+    margin: 4px 0 16px; padding: 14px; border-radius: 8px; background: #fff8e1;
+    font-size: 15px; line-height: 1.45;
+  }
+  .instructions strong { display: block; margin-bottom: 6px; font-size: 16px; }
+  .instructions ul { margin: 0; padding-left: 20px; }
+  .count {
+    position: sticky; top: 0; z-index: 1; margin: 0 -20px 16px; padding: 10px 20px;
+    background: #eaf0f8; font-weight: bold; text-align: center;
+  }
+  .count.done { background: #dff0d8; color: #156a3e; }
+  button {
+    width: 100%; padding: 14px; border: 0; border-radius: 8px; cursor: pointer;
+    font: inherit; font-size: 17px; font-weight: bold; color: #fff; background: #1a7f4b;
+  }
+  button:hover { background: #156a3e; }
+  .note { margin: 12px 0 0; font-size: 14px; line-height: 1.4; color: #4a5568; text-align: center; }
+  .error { margin: 12px 0 0; font-size: 14px; color: #b3261e; text-align: center; }
+  .error:empty { display: none; }
+  .thanks { padding: 32px 24px; text-align: center; }
+  .thanks[hidden], form[hidden] { display: none; }
+  .thanks .mark {
+    width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%;
+    background: #dff0d8; color: #156a3e; font-size: 34px; line-height: 64px;
+  }
+  .thanks h2 { margin: 0 0 12px; font-size: 24px; color: #1f3864; }
+  .thanks p { margin: 0 0 14px; font-size: 16px; line-height: 1.5; }
+  .thanks .blessing { font-weight: bold; color: #1f3864; }
+  .thanks .reminder { padding: 12px; border-radius: 8px; background: #fff8e1; font-size: 15px; }
+  .thanks a { color: #156a3e; font-weight: bold; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Next Year Must Favour Me</h1>
+    <p>Nov 2026 to Nov 2027</p>
+  </header>
+  <form id="form" novalidate>
+    <label for="name">Your name</label>
+    <input id="name" name="name" type="text" autocomplete="name" maxlength="80">
+
+    <label for="phone">Your phone number <span class="optional">(optional)</span></label>
+    <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30">
+
+    <div class="instructions">
+      <strong>List eleven things you want God to do for you.</strong>
+      <ul>
+        <li>Write each request under the month you want it answered.</li>
+        <li>One request per line. If a month has two, press Enter between them.</li>
+        <li>Some months can stay empty, but the total must be eleven.</li>
+      </ul>
+    </div>
+
+    <p class="count" id="count" aria-live="polite">0 of 11 requests</p>
+
+    <div id="months"></div>
+
+    <button type="submit">Send to Pastor on WhatsApp</button>
+    <p class="error" id="error" role="alert"></p>
+    <p class="note">WhatsApp will open with your requests ready. Tap send there to finish.</p>
+  </form>
+  <section class="thanks" id="thanks" hidden>
+    <div class="mark" aria-hidden="true">&#10003;</div>
+    <h2 id="thanksTitle" tabindex="-1">Thank you!</h2>
+    <p>Your eleven requests are on their way to the Pastor.</p>
+    <p class="blessing">May next year favour you, and may God answer every one of them.</p>
+    <p class="reminder">Remember to tap send in WhatsApp so your requests reach the Pastor.</p>
+    <p><a id="again" href="#" target="_blank" rel="noopener">WhatsApp did not open? Tap here</a></p>
+  </section>
+</main>
+<script>
+  // Pastor's WhatsApp number: digits only, with country code, no + or spaces.
+  const PASTOR_NUMBER = "4915210289937";
+  const REQUIRED = 11;
+  const MONTHS = [
+    "November 2026", "December 2026", "January 2027", "February 2027", "March 2027",
+    "April 2027", "May 2027", "June 2027", "July 2027", "August 2027",
+    "September 2027", "October 2027", "November 2027"
+  ];
+
+  const monthsEl = document.getElementById("months");
+  MONTHS.forEach(function (month, i) {
+    const label = document.createElement("label");
+    label.htmlFor = "month" + i;
+    label.textContent = month;
+    const box = document.createElement("textarea");
+    box.id = "month" + i;
+    box.maxLength = 600;
+    box.addEventListener("input", updateCount);
+    monthsEl.append(label, box);
+  });
+
+  function requestsByMonth() {
+    return MONTHS.map(function (month, i) {
+      const lines = document.getElementById("month" + i).value
+        .split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
+      return { month: month, lines: lines };
+    });
+  }
+
+  function totalRequests() {
+    return requestsByMonth().reduce(function (n, m) { return n + m.lines.length; }, 0);
+  }
+
+  function updateCount() {
+    const total = totalRequests();
+    const count = document.getElementById("count");
+    count.textContent = total + " of " + REQUIRED + " requests";
+    count.classList.toggle("done", total === REQUIRED);
+  }
+
+  function buildLink(name, phone) {
+    let message = "Next Year Must Favour Me\nPrayer Requests\n\nName: " + name + "\n";
+    if (phone) message += "Phone: " + phone + "\n";
+    let n = 0;
+    requestsByMonth().forEach(function (m) {
+      if (!m.lines.length) return;
+      message += "\n" + m.month + "\n";
+      m.lines.forEach(function (line) { n += 1; message += n + ". " + line + "\n"; });
+    });
+    return "https://wa.me/" + PASTOR_NUMBER + "?text=" + encodeURIComponent(message.trim());
+  }
+
+  document.getElementById("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const error = document.getElementById("error");
+    const total = totalRequests();
+    if (!name) {
+      error.textContent = "Please enter your name.";
+      return;
+    }
+    if (total !== REQUIRED) {
+      error.textContent = "Please list exactly eleven requests. You have " + total + ".";
+      return;
+    }
+    error.textContent = "";
+    const link = buildLink(name, phone);
+    document.getElementById("thanksTitle").textContent = "Thank you, " + name + "!";
+    document.getElementById("again").href = link;
+    document.getElementById("form").hidden = true;
+    document.getElementById("thanks").hidden = false;
+    window.scrollTo(0, 0);
+    document.getElementById("thanksTitle").focus();
+    if (!window.open(link, "_blank")) window.location.href = link;
+  });
+</script>
+</body>
+</html>
