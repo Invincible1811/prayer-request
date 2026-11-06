@@ -3,101 +3,147 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Next Year Must Favour Me: Prayer Request</title>
+<title>Next Year Must Favour Me | Divine Peniel Chapel Worldwide</title>
+<meta name="description" content="List your eleven prayer requests for Nov 2026 to Nov 2027.">
+<meta property="og:title" content="Next Year Must Favour Me">
+<meta property="og:description" content="Divine Peniel Chapel Worldwide. List your eleven prayer requests for Nov 2026 to Nov 2027.">
+<meta property="og:image" content="https://invincible1811.github.io/prayer-request/preview.jpg">
+<meta property="og:url" content="https://invincible1811.github.io/prayer-request/">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --black: #0b0a08; --panel: #15130f; --ivory: #fffcf3; --line: #e7dcc0;
+    --gold: #d4a62a; --gold-light: #f6e3a1; --gold-deep: #8a6510; --ink: #24201a; --muted: #6a6152;
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --sans: Lato, Arial, Helvetica, sans-serif;
+  }
   * { box-sizing: border-box; }
   body {
-    margin: 0; min-height: 100vh; padding: 24px 16px;
-    font-family: Arial, Helvetica, sans-serif; color: #1c2430;
-    background: #eaf0f8; display: flex; justify-content: center; align-items: flex-start;
+    margin: 0; min-height: 100vh; padding: 0 0 40px; color: var(--ink); font-family: var(--sans);
+    background: radial-gradient(ellipse 90% 460px at 50% 130px, #3a2c0c 0%, rgba(58, 44, 12, 0) 72%), var(--black);
   }
-  main {
-    width: 100%; max-width: 480px; background: #fff; border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(31, 56, 100, .12);
+  .page { width: 100%; max-width: 520px; margin: 0 auto; padding: 0 14px; }
+  .hero { padding: 34px 12px 30px; text-align: center; color: var(--gold-light); }
+  .logo {
+    display: block; width: 168px; height: 168px; margin: 0 auto 20px; border-radius: 50%;
+    box-shadow: 0 0 0 3px var(--black), 0 0 0 5px var(--gold), 0 0 46px rgba(212, 166, 42, .5);
   }
-  header { background: #1f3864; color: #fff; padding: 24px 20px; text-align: center; border-radius: 12px 12px 0 0; }
-  h1 { margin: 0 0 6px; font-size: 24px; line-height: 1.2; }
-  header p { margin: 0; font-size: 16px; font-weight: bold; }
-  form { padding: 20px; }
-  label { display: block; font-weight: bold; margin-bottom: 6px; }
-  .optional { font-weight: normal; color: #4a5568; }
+  .church { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+  h1 {
+    margin: 0 0 14px; font-family: var(--serif); font-size: 36px; line-height: 1.14; font-weight: 700;
+    color: var(--gold-light);
+    background: linear-gradient(180deg, #fff3c4 10%, #e3b94a 60%, #c4951f 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .period {
+    display: inline-block; padding: 7px 18px; border: 1px solid var(--gold); border-radius: 999px;
+    font-size: 15px; font-weight: 700; color: var(--gold-light); letter-spacing: .03em;
+  }
+  .card { background: var(--ivory); border-radius: 18px; border-top: 4px solid var(--gold); box-shadow: 0 14px 40px rgba(0, 0, 0, .5); }
+  form { padding: 24px 20px 26px; }
+  form[hidden], .thanks[hidden] { display: none; }
+  label { display: block; margin-bottom: 7px; font-weight: 700; font-size: 15px; }
+  .optional { font-weight: 400; color: var(--muted); }
   input, textarea {
-    width: 100%; padding: 12px; margin-bottom: 18px; font: inherit; font-size: 16px;
-    border: 1px solid #bfc8d6; border-radius: 8px;
+    display: block; width: 100%; padding: 12px 13px; font: inherit; font-size: 16px; color: var(--ink);
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
   }
-  textarea { min-height: 66px; resize: vertical; margin-bottom: 14px; }
-  input:focus, textarea:focus { outline: 2px solid #1f3864; border-color: #1f3864; }
+  input { margin-bottom: 18px; }
+  textarea { min-height: 68px; resize: vertical; }
+  input:focus, textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
   .instructions {
-    margin: 4px 0 16px; padding: 14px; border-radius: 8px; background: #fff8e1;
-    font-size: 15px; line-height: 1.45;
+    margin: 6px 0 18px; padding: 18px; border-radius: 12px; color: var(--gold-light);
+    background: linear-gradient(160deg, #1d1912, #0e0d0a); border: 1px solid var(--gold-deep);
   }
-  .instructions strong { display: block; margin-bottom: 6px; font-size: 16px; }
-  .instructions ul { margin: 0; padding-left: 20px; }
+  .instructions h2 { margin: 0 0 10px; font-family: var(--serif); font-size: 21px; line-height: 1.25; font-weight: 600; color: #fff3c4; }
+  .instructions ul { margin: 0; padding-left: 19px; font-size: 15px; line-height: 1.5; color: #efe6cf; }
+  .instructions li + li { margin-top: 4px; }
   .count {
-    position: sticky; top: 0; z-index: 1; margin: 0 -20px 16px; padding: 10px 20px;
-    background: #eaf0f8; font-weight: bold; text-align: center;
+    position: sticky; top: 0; z-index: 2; margin: 0 -20px 18px; padding: 10px 20px 11px;
+    background: var(--black); color: var(--gold-light); text-align: center; font-weight: 700; font-size: 15px;
   }
-  .count.done { background: #dff0d8; color: #156a3e; }
+  .bar { height: 5px; margin-top: 7px; border-radius: 3px; background: #3a3220; overflow: hidden; }
+  .bar span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, #c4951f, #f6e3a1); transition: width .2s; }
+  .count.over .bar span { background: #d9534f; }
+  .month { margin-bottom: 14px; }
+  .year {
+    display: flex; align-items: center; gap: 12px; margin: 22px 0 14px; color: var(--gold-deep);
+    font-family: var(--serif); font-size: 20px; font-weight: 700;
+  }
+  .year:first-child { margin-top: 0; }
+  .year::after { content: ""; flex: 1; height: 1px; background: var(--gold); }
   button {
-    width: 100%; padding: 14px; border: 0; border-radius: 8px; cursor: pointer;
-    font: inherit; font-size: 17px; font-weight: bold; color: #fff; background: #1a7f4b;
+    display: block; width: 100%; margin-top: 22px; padding: 16px; border: 0; border-radius: 12px; cursor: pointer;
+    font: inherit; font-size: 17px; font-weight: 700; color: var(--black);
+    background: linear-gradient(180deg, #f6e3a1, #d4a62a); box-shadow: 0 4px 14px rgba(138, 101, 16, .4);
   }
-  button:hover { background: #156a3e; }
-  .note { margin: 12px 0 0; font-size: 14px; line-height: 1.4; color: #4a5568; text-align: center; }
-  .error { margin: 12px 0 0; font-size: 14px; color: #b3261e; text-align: center; }
+  button:hover { background: linear-gradient(180deg, #fbedc0, #dcb13a); }
+  button:focus-visible { outline: 2px solid var(--black); outline-offset: 2px; }
+  .note { margin: 12px 0 0; font-size: 14px; line-height: 1.45; color: var(--muted); text-align: center; }
+  .error { margin: 12px 0 0; font-size: 15px; font-weight: 700; color: #a4261d; text-align: center; }
   .error:empty { display: none; }
-  .thanks { padding: 32px 24px; text-align: center; }
-  .thanks[hidden], form[hidden] { display: none; }
-  .thanks .mark {
-    width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%;
-    background: #dff0d8; color: #156a3e; font-size: 34px; line-height: 64px;
-  }
-  .thanks h2 { margin: 0 0 12px; font-size: 24px; color: #1f3864; }
-  .thanks p { margin: 0 0 14px; font-size: 16px; line-height: 1.5; }
-  .thanks .blessing { font-weight: bold; color: #1f3864; }
-  .thanks .reminder { padding: 12px; border-radius: 8px; background: #fff8e1; font-size: 15px; }
-  .thanks a { color: #156a3e; font-weight: bold; }
+  .thanks { padding: 34px 24px 30px; text-align: center; }
+  .thanks h2 { margin: 0 0 14px; font-family: var(--serif); font-size: 30px; line-height: 1.2; color: var(--gold-deep); outline: none; }
+  .thanks p { margin: 0 0 14px; font-size: 17px; line-height: 1.5; }
+  .thanks .blessing { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--ink); }
+  .thanks .reminder { padding: 13px; border-radius: 10px; background: var(--black); color: var(--gold-light); font-size: 15px; font-weight: 700; }
+  .thanks a { color: var(--gold-deep); font-size: 15px; font-weight: 700; }
+  footer { margin-top: 22px; text-align: center; font-size: 13px; color: #a8976e; letter-spacing: .04em; }
 </style>
 </head>
 <body>
-<main>
-  <header>
+<div class="page">
+  <header class="hero">
+    <img class="logo" src="logo.png" alt="Divine Peniel Chapel Worldwide logo" width="168" height="168">
+    <p class="church">Divine Peniel Chapel Worldwide</p>
     <h1>Next Year Must Favour Me</h1>
-    <p>Nov 2026 to Nov 2027</p>
+    <span class="period">Nov 2026 to Nov 2027</span>
   </header>
-  <form id="form" novalidate>
-    <label for="name">Your name</label>
-    <input id="name" name="name" type="text" autocomplete="name" maxlength="80">
 
-    <label for="phone">Your phone number <span class="optional">(optional)</span></label>
-    <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30">
+  <main class="card">
+    <form id="form" novalidate>
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" autocomplete="name" maxlength="80">
 
-    <div class="instructions">
-      <strong>List eleven things you want God to do for you.</strong>
-      <ul>
-        <li>Write each request under the month you want it answered.</li>
-        <li>One request per line. If a month has two, press Enter between them.</li>
-        <li>Some months can stay empty, but the total must be eleven.</li>
-      </ul>
-    </div>
+      <label for="phone">Your phone number <span class="optional">(optional)</span></label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30">
 
-    <p class="count" id="count" aria-live="polite">0 of 11 requests</p>
+      <div class="instructions">
+        <h2>List eleven things you want God to do for you</h2>
+        <ul>
+          <li>Write each request under the month you want it answered.</li>
+          <li>One request per line. If a month has two, press Enter between them.</li>
+          <li>Some months can stay empty, but the total must be eleven.</li>
+        </ul>
+      </div>
 
-    <div id="months"></div>
+      <div class="count" id="count">
+        <span id="countText" aria-live="polite">0 of 11 requests</span>
+        <div class="bar"><span id="bar"></span></div>
+      </div>
 
-    <button type="submit">Send to Papa on WhatsApp</button>
-    <p class="error" id="error" role="alert"></p>
-    <p class="note">WhatsApp will open with your requests ready. Tap send there to finish.</p>
-  </form>
-  <section class="thanks" id="thanks" hidden>
-    <div class="mark" aria-hidden="true">&#10003;</div>
-    <h2 id="thanksTitle" tabindex="-1">Thank you!</h2>
-    <p>Your eleven requests are on their way to Papa.</p>
-    <p class="blessing">May next year favour you, and may God answer every one of them.</p>
-    <p class="reminder">Remember to tap send in WhatsApp so your requests reach Papa.</p>
-    <p><a id="again" href="#" target="_blank" rel="noopener">WhatsApp did not open? Tap here</a></p>
-  </section>
-</main>
+      <div id="months"></div>
+
+      <button type="submit">Send to Papa on WhatsApp</button>
+      <p class="error" id="error" role="alert"></p>
+      <p class="note">WhatsApp will open with your requests ready. Tap send there to finish.</p>
+    </form>
+
+    <section class="thanks" id="thanks" hidden>
+      <h2 id="thanksTitle" tabindex="-1">Thank you!</h2>
+      <p>Your eleven requests are on their way to Papa.</p>
+      <p class="blessing">May next year favour you, and may God answer every one of them.</p>
+      <p class="reminder">Remember to tap send in WhatsApp so your requests reach Papa.</p>
+      <p><a id="again" href="#" target="_blank" rel="noopener">WhatsApp did not open? Tap here</a></p>
+    </section>
+  </main>
+
+  <footer>Divine Peniel Chapel Worldwide (D.P.C.W)</footer>
+</div>
 <script>
   // Papa's WhatsApp number: digits only, with country code, no + or spaces.
   const PAPA_NUMBER = "4915210289937";
@@ -109,7 +155,18 @@
   ];
 
   const monthsEl = document.getElementById("months");
+  let currentYear = "";
   MONTHS.forEach(function (month, i) {
+    const parts = month.split(" ");
+    if (parts[1] !== currentYear) {
+      currentYear = parts[1];
+      const year = document.createElement("div");
+      year.className = "year";
+      year.textContent = currentYear;
+      monthsEl.append(year);
+    }
+    const wrap = document.createElement("div");
+    wrap.className = "month";
     const label = document.createElement("label");
     label.htmlFor = "month" + i;
     label.textContent = month;
@@ -117,7 +174,8 @@
     box.id = "month" + i;
     box.maxLength = 600;
     box.addEventListener("input", updateCount);
-    monthsEl.append(label, box);
+    wrap.append(label, box);
+    monthsEl.append(wrap);
   });
 
   function requestsByMonth() {
@@ -134,9 +192,10 @@
 
   function updateCount() {
     const total = totalRequests();
-    const count = document.getElementById("count");
-    count.textContent = total + " of " + REQUIRED + " requests";
-    count.classList.toggle("done", total === REQUIRED);
+    document.getElementById("countText").textContent =
+      total + " of " + REQUIRED + " requests" + (total > REQUIRED ? " (too many)" : "");
+    document.getElementById("bar").style.width = Math.min(100, total / REQUIRED * 100) + "%";
+    document.getElementById("count").classList.toggle("over", total > REQUIRED);
   }
 
   function buildLink(name, phone) {
